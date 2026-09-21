@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kaizen Motion | Private Personal Training Singapore</title>
+  <meta name="description" content="Private personal training in Orchard, Singapore. Personalised coaching in a focused boutique studio at United House, 20 Kramat Lane.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --teal: #07979b;
+      --teal-dark: #087d80;
+      --black: #101415;
+      --grey: #626a6b;
+      --light-grey: #f4f5f3;
+      --warm-white: #faf9f6;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--warm-white);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(250, 249, 246, 0.96);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-brand {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    .nav-brand span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--black);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .nav-cta {
+      padding: 12px 20px;
+      border: 1px solid var(--black);
+      transition: 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--black);
+      color: white !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 150px 8% 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(7,151,155,0.13);
+      transform: rotate(45deg);
+      right: -150px;
+      top: 180px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(52px, 7vw, 105px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      font-weight: 700;
+      margin-bottom: 35px;
+    }
+
+    h1 span {
+      color: var(--teal);
+    }
+
+    .hero-copy {
+      max-width: 580px;
+      color: var(--grey);
+      font-size: 19px;
+      line-height: 1.7;
+      margin-bottom: 42px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--black);
+      color: white;
+      padding: 17px 29px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      background: var(--teal);
+    }
+
+    .button-light {
+      background: white;
+      color: var(--black);
+    }
+
+    .button-light:hover {
+      background: var(--warm-white);
+      color: var(--black);
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy {
+      background: var(--black);
+      color: white;
+      padding: 120px 8%;
+    }
+
+    .section-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 100px;
+    }
+
+    .section-label {
+      color: var(--teal);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .philosophy h2,
+    .training h2,
+    .studio h2,
+    .contact h2 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 30px;
+    }
+
+    .philosophy p {
+      color: #b7bbbb;
+      max-width: 720px;
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    /* TRAINING */
+
+    .training {
+      padding: 130px 8%;
+      background: white;
+    }
+
+    .training-wrap {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .training-header {
+      max-width: 750px;
+      margin-bottom: 75px;
+    }
+
+    .training-header .section-label {
+      margin-bottom: 22px;
+    }
+
+    .training-header p {
+      color: var(--grey);
+      font-size: 18px;
+      max-width: 650px;
+    }
+
+    .training-card {
+      border-top: 1px solid #d9dcda;
+      border-bottom: 1px solid #d9dcda;
+      padding: 50px 0;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .training-card h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .training-card p {
+      color: var(--grey);
+      max-width: 600px;
+    }
+
+    .price {
+      text-align: right;
+    }
+
+    .price strong {
+      display: block;
+      font-size: 42px;
+      letter-spacing: -1px;
+    }
+
+    .price span {
+      color: var(--grey);
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* DIFFERENCE */
+
+    .difference {
+      padding: 110px 8%;
+      background: var(--light-grey);
+    }
+
+    .difference-wrap {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 55px;
+    }
+
+    .difference-item {
+      border-top: 2px solid var(--teal);
+      padding-top: 25px;
+    }
+
+    .difference-item .number {
+      font-size: 12px;
+      color: var(--teal);
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .difference-item h3 {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .difference-item p {
+      color: var(--grey);
+      font-size: 15px;
+    }
+
+    /* STUDIO */
+
+    .studio {
+      padding: 130px 8%;
+      background: var(--warm-white);
+    }
+
+    .studio-wrap {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .studio-visual {
+      height: 540px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-mark {
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+
+    .studio-mark strong {
+      display: block;
+      font-size: 30px;
+      letter-spacing: 8px;
+    }
+
+    .studio-mark span {
+      display: block;
+      margin-top: 13px;
+      color: var(--teal);
+      letter-spacing: 4px;
+      font-size: 11px;
+    }
+
+    .studio-visual::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(7,151,155,0.35);
+      transform: rotate(45deg);
+    }
+
+    .studio-copy .section-label {
+      margin-bottom: 22px;
+    }
+
+    .studio-copy p {
+      color: var(--grey);
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .address {
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #d9dcda;
+    }
+
+    .address strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* CTA */
+
+    .contact {
+      padding: 130px 8%;
+      background: var(--teal);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-inner {
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .contact .section-label {
+      color: white;
+      opacity: 0.75;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      max-width: 620px;
+      margin: 0 auto 38px;
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--black);
+      color: #999;
+      padding: 45px 8%;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-brand {
+      color: white;
+      letter-spacing: 4px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .footer-small {
+      font-size: 12px;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+      nav {
+        height: 70px;
+        padding: 0 6%;
+      }
+
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-brand {
+        font-size: 14px;
+        letter-spacing: 3px;
+      }
+
+      .nav-cta {
+        padding: 10px 13px;
+        font-size: 10px !important;
+      }
+
+      .hero {
+        padding: 125px 7% 75px;
+        min-height: 92vh;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .section-grid,
+      .studio-wrap,
+      .training-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .philosophy,
+      .training,
+      .studio,
+      .contact {
+        padding: 85px 7%;
+      }
+
+      .difference {
+        padding: 85px 7%;
+      }
+
+      .difference-wrap {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .price {
+        text-align: left;
+      }
+
+      .studio-visual {
+        height: 360px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-small {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="nav-brand">KAIZEN <span>MOTION</span></a>
+
+    <div class="nav-links">
+      <a href="#training">Training</a>
+      <a href="#studio">Studio</a>
+      <a href="#contact" class="nav-cta">BOOK A CONSULTATION</a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">Private Personal Training · Singapore</div>
+
+      <h1>
+        BETTER,<br>
+        <span>CONTINUOUSLY.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Personal training built around you. A focused, private environment
+        to get stronger, move better and make progress that lasts.
+      </p>
+
+      <a href="#contact" class="button">START YOUR JOURNEY</a>
+
+    </div>
+
+  </section>
+
+
+  <section class="philosophy">
+
+    <div class="section-grid">
+
+      <div>
+        <div class="section-label">The Kaizen Approach</div>
+      </div>
+
+      <div>
+        <h2>Progress doesn't need to be dramatic. It needs to continue.</h2>
+
+        <p>
+          Kaizen means continuous improvement — the belief that meaningful
+          change comes from consistently getting a little better.
+        </p>
+
+        <p>
+          We apply that same philosophy to training. No extremes. No
+          one-size-fits-all programmes. Just purposeful coaching,
+          progressive training and a plan built around where you are today
+          and where you want to go.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="training" id="training">
+
+    <div class="training-wrap">
+
+      <div class="training-header">
+
+        <div class="section-label">Personal Training</div>
+
+        <h2>Training, built around you.</h2>
+
+        <p>
+          Every session is coached individually around your goals,
+          experience, movement and progress.
+        </p>
+
+      </div>
+
+
+      <div class="training-card">
+
+        <div>
+          <h3>1-to-1 Personal Training</h3>
+
+          <p>
+            Individual coaching with a structured programme that evolves
+            with you. Whether your goal is strength, movement, confidence
+            or simply feeling better in your body, the process starts with you.
+          </p>
+        </div>
+
+        <div class="price">
+          <strong>S$180</strong>
+          <span>Per Session</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="difference">
+
+    <div class="difference-wrap">
+
+      <div class="difference-item">
+        <div class="number">01</div>
+        <h3>Personal</h3>
+        <p>
+          Your programme is built around you — not adapted from a generic
+          template designed for everyone.
+        </p>
+      </div>
+
+      <div class="difference-item">
+        <div class="number">02</div>
+        <h3>Focused</h3>
+        <p>
+          A private training environment without the crowds and distractions
+          of a large commercial gym.
+        </p>
+      </div>
+
+      <div class="difference-item">
+        <div class="number">03</div>
+        <h3>Progressive</h3>
+        <p>
+          Training evolves as you do. We focus on sustainable progress rather
+          than short-term extremes.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="studio" id="studio">
+
+    <div class="studio-wrap">
+
+      <div class="studio-visual">
+
+        <div class="studio-mark">
+          <strong>KAIZEN</strong>
+          <span>MOTION</span>
+        </div>
+
+      </div>
+
+
+      <div class="studio-copy">
+
+        <div class="section-label">The Studio</div>
+
+        <h2>Private by design.</h2>
+
+        <p>
+          Kaizen Motion is a boutique personal training studio designed for
+          focused coaching — not crowds.
+        </p>
+
+        <p>
+          A calm, considered space where the attention stays on your training,
+          your movement and your progress.
+        </p>
+
+        <div class="address">
+          <strong>Kaizen Motion</strong>
+          20 Kramat Lane, United House<br>
+          Singapore 228773
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+
+    <div class="contact-inner">
+
+      <div class="section-label">Start Here</div>
+
+      <h2>Let's talk about where you want to go.</h2>
+
+      <p>
+        Start with a conversation. Tell us what you'd like to work on and
+        we'll help you figure out the right way forward.
+      </p>
+
+      <a
+        href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20find%20out%20more%20about%20personal%20training."
+        target="_blank"
+        class="button button-light">
+        WHATSAPP KAIZEN MOTION
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">KAIZEN MOTION</div>
+
+      <div class="footer-small">
+        KAIZEN MOTION PTE. LTD.<br>
+        20 Kramat Lane, United House, Singapore 228773<br>
+        © 2026 Kaizen Motion. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
