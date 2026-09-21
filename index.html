@@ -4,10 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kaizen Motion | Private Personal Training Singapore</title>
-  <meta name="description" content="Private personal training in Orchard, Singapore. Personalised coaching in a focused boutique studio at United House, 20 Kramat Lane.">
+  <title>Kaizen Motion | Private Personal Training in Orchard, Singapore</title>
+
+  <meta
+    name="description"
+    content="Private 1-to-1 personal training in Orchard, Singapore. Individual coaching in a calm, focused private studio at United House, 20 Kramat Lane."
+  >
+
+  <meta name="theme-color" content="#faf9f6">
 
   <style>
+
+    /* =========================
+       BASE
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +30,9 @@
       --teal-dark: #087d80;
       --black: #101415;
       --grey: #626a6b;
-      --light-grey: #f4f5f3;
+      --grey-light: #a5aaaa;
+      --line: #dfe1df;
+      --light-grey: #f1f2ef;
       --warm-white: #faf9f6;
       --white: #ffffff;
     }
@@ -36,28 +49,100 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAVIGATION */
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 86%);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 29px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: 0.25s ease;
+      border: 1px solid var(--black);
+    }
+
+    .button:hover {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--black);
+    }
+
+    .button-outline:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: white;
+    }
+
+    .button-white {
+      background: white;
+      border-color: white;
+      color: var(--black);
+    }
+
+    .button-white:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: white;
+    }
+
+
+    /* =========================
+       NAV
+    ========================= */
 
     nav {
-      width: 100%;
       height: 82px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 0 6%;
+
       background: rgba(250, 249, 246, 0.96);
-      position: fixed;
-      top: 0;
-      z-index: 1000;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
       border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
     .nav-brand {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 4px;
       text-decoration: none;
       color: var(--black);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      white-space: nowrap;
     }
 
     .nav-brand span {
@@ -66,310 +151,409 @@
 
     .nav-links {
       display: flex;
-      gap: 34px;
       align-items: center;
+      gap: 32px;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: var(--black);
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
     }
 
-    .nav-cta {
-      padding: 12px 20px;
+    .nav-links .nav-cta {
+      padding: 11px 18px;
       border: 1px solid var(--black);
       transition: 0.25s ease;
     }
 
-    .nav-cta:hover {
+    .nav-links .nav-cta:hover {
       background: var(--black);
-      color: white !important;
+      color: white;
     }
 
-    /* HERO */
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
+      padding: 145px 7% 75px;
+
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 7vw;
+      align-items: center;
+
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero .section-label {
+      margin-bottom: 27px;
+    }
+
+    .hero h1 {
+      font-size: clamp(58px, 7vw, 105px);
+      line-height: 0.92;
+      letter-spacing: -5px;
+      margin-bottom: 35px;
+    }
+
+    .hero h1 span {
+      color: var(--teal);
+    }
+
+    .hero-lead {
+      max-width: 590px;
+      font-size: 20px;
+      line-height: 1.65;
+      color: var(--grey);
+      margin-bottom: 22px;
+    }
+
+    .hero-lead strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .hero-sub {
+      max-width: 560px;
+      color: var(--grey);
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+
+    /* HERO IMAGE PLACEHOLDER */
+
+    .hero-image {
+      height: min(70vh, 680px);
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(16,20,21,0.94),
+          rgba(16,20,21,0.82)
+        );
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+
       display: flex;
       align-items: center;
-      padding: 150px 8% 90px;
+      justify-content: center;
+
       position: relative;
       overflow: hidden;
     }
 
-    .hero::after {
+    .photo-placeholder::before {
       content: "";
       position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(7,151,155,0.13);
+      width: 330px;
+      height: 330px;
+      border: 1px solid rgba(7,151,155,0.35);
       transform: rotate(45deg);
-      right: -150px;
-      top: 180px;
     }
 
-    .hero-content {
-      max-width: 850px;
+    .photo-placeholder-content {
+      text-align: center;
+      color: white;
       position: relative;
       z-index: 2;
+      padding: 30px;
     }
 
-    .eyebrow {
+    .photo-placeholder-content strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+    }
+
+    .photo-placeholder-content span {
+      display: block;
       color: var(--teal);
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 25px;
     }
 
-    h1 {
-      font-size: clamp(52px, 7vw, 105px);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      font-weight: 700;
-      margin-bottom: 35px;
+    .image-caption {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+
+      color: rgba(255,255,255,0.6);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      z-index: 3;
     }
 
-    h1 span {
-      color: var(--teal);
-    }
 
-    .hero-copy {
-      max-width: 580px;
-      color: var(--grey);
-      font-size: 19px;
-      line-height: 1.7;
-      margin-bottom: 42px;
-    }
-
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      background: var(--black);
-      color: white;
-      padding: 17px 29px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      transition: 0.25s ease;
-    }
-
-    .button:hover {
-      background: var(--teal);
-    }
-
-    .button-light {
-      background: white;
-      color: var(--black);
-    }
-
-    .button-light:hover {
-      background: var(--warm-white);
-      color: var(--black);
-    }
-
-    /* PHILOSOPHY */
+    /* =========================
+       KAIZEN PHILOSOPHY
+    ========================= */
 
     .philosophy {
+      padding: 130px 0;
       background: var(--black);
       color: white;
-      padding: 120px 8%;
     }
 
-    .section-grid {
-      max-width: 1200px;
-      margin: auto;
+    .philosophy-grid {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 0.65fr 1.35fr;
       gap: 100px;
     }
 
-    .section-label {
-      color: var(--teal);
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .philosophy h2,
-    .training h2,
-    .studio h2,
-    .contact h2 {
-      font-size: clamp(36px, 5vw, 64px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin-bottom: 30px;
+    .philosophy h2 {
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      max-width: 800px;
+      margin-bottom: 36px;
     }
 
     .philosophy p {
-      color: #b7bbbb;
       max-width: 720px;
+      color: #b9bdbd;
       font-size: 18px;
-      margin-bottom: 22px;
+      line-height: 1.75;
+      margin-bottom: 19px;
     }
 
-    /* TRAINING */
+
+    /* =========================
+       TRAINING
+    ========================= */
 
     .training {
-      padding: 130px 8%;
       background: white;
+      padding: 135px 0;
     }
 
-    .training-wrap {
-      max-width: 1200px;
-      margin: auto;
+    .training-intro {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      margin-bottom: 85px;
     }
 
-    .training-header {
-      max-width: 750px;
-      margin-bottom: 75px;
+    .training h2,
+    .studio h2,
+    .coach h2 {
+      font-size: clamp(40px, 5vw, 67px);
+      line-height: 1.05;
+      letter-spacing: -3px;
     }
 
-    .training-header .section-label {
-      margin-bottom: 22px;
-    }
-
-    .training-header p {
+    .training-intro-copy p {
       color: var(--grey);
       font-size: 18px;
-      max-width: 650px;
+      max-width: 620px;
+      margin-top: 28px;
     }
 
-    .training-card {
-      border-top: 1px solid #d9dcda;
-      border-bottom: 1px solid #d9dcda;
-      padding: 50px 0;
+
+    /* PRICE / SERVICE */
+
+    .service {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 70px;
+
+      padding: 55px 0;
       align-items: center;
     }
 
-    .training-card h3 {
+    .service h3 {
       font-size: 28px;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
-    .training-card p {
+    .service-description {
       color: var(--grey);
-      max-width: 600px;
+      max-width: 650px;
+      margin-bottom: 27px;
+    }
+
+    .included {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px 30px;
+      max-width: 590px;
+    }
+
+    .included span {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    .included span::before {
+      content: "—";
+      color: var(--teal);
+      margin-right: 10px;
+    }
+
+    .price-panel {
+      border-left: 1px solid var(--line);
+      padding-left: 60px;
+    }
+
+    .price-label {
+      color: var(--grey);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
     .price {
-      text-align: right;
-    }
-
-    .price strong {
-      display: block;
-      font-size: 42px;
-      letter-spacing: -1px;
+      font-size: clamp(48px, 5vw, 68px);
+      line-height: 1;
+      letter-spacing: -3px;
+      font-weight: 700;
     }
 
     .price span {
+      font-size: 18px;
+      letter-spacing: 0;
       color: var(--grey);
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-weight: 400;
     }
 
-    /* DIFFERENCE */
+    .price-note {
+      margin-top: 17px;
+      color: var(--grey);
+      font-size: 12px;
+      max-width: 230px;
+    }
 
-    .difference {
-      padding: 110px 8%;
+
+    /* =========================
+       THREE VALUES
+    ========================= */
+
+    .values {
+      padding: 115px 0;
       background: var(--light-grey);
     }
 
-    .difference-wrap {
-      max-width: 1200px;
-      margin: auto;
+    .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 55px;
     }
 
-    .difference-item {
+    .value {
       border-top: 2px solid var(--teal);
-      padding-top: 25px;
+      padding-top: 26px;
     }
 
-    .difference-item .number {
-      font-size: 12px;
+    .value-number {
       color: var(--teal);
+      font-size: 11px;
       letter-spacing: 2px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
-    .difference-item h3 {
-      font-size: 21px;
-      margin-bottom: 14px;
+    .value h3 {
+      font-size: 23px;
+      margin-bottom: 15px;
     }
 
-    .difference-item p {
+    .value p {
       color: var(--grey);
       font-size: 15px;
+      line-height: 1.7;
     }
 
-    /* STUDIO */
+
+    /* =========================
+       COACHING IMAGE
+    ========================= */
+
+    .coaching-image-section {
+      background: var(--black);
+      padding: 0;
+    }
+
+    .coaching-image {
+      min-height: 560px;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          120deg,
+          #171c1d,
+          #0f1213
+        );
+    }
+
+    .coaching-image .photo-placeholder::before {
+      width: 420px;
+      height: 420px;
+    }
+
+
+    /* =========================
+       STUDIO
+    ========================= */
 
     .studio {
-      padding: 130px 8%;
+      padding: 135px 0;
       background: var(--warm-white);
     }
 
-    .studio-wrap {
-      max-width: 1200px;
-      margin: auto;
+    .studio-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 100px;
       align-items: center;
     }
 
-    .studio-visual {
-      height: 540px;
+    .studio-photo {
+      height: 600px;
       background: var(--black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
     }
 
-    .studio-mark {
-      text-align: center;
-      color: white;
-      z-index: 2;
-    }
-
-    .studio-mark strong {
-      display: block;
-      font-size: 30px;
-      letter-spacing: 8px;
-    }
-
-    .studio-mark span {
-      display: block;
-      margin-top: 13px;
-      color: var(--teal);
-      letter-spacing: 4px;
-      font-size: 11px;
-    }
-
-    .studio-visual::after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border: 1px solid rgba(7,151,155,0.35);
-      transform: rotate(45deg);
-    }
-
     .studio-copy .section-label {
-      margin-bottom: 22px;
+      margin-bottom: 25px;
+    }
+
+    .studio-copy h2 {
+      margin-bottom: 32px;
     }
 
     .studio-copy p {
@@ -378,84 +562,200 @@
       margin-bottom: 20px;
     }
 
-    .address {
+    .location {
+      border-top: 1px solid var(--line);
+      margin-top: 38px;
+      padding-top: 27px;
+    }
+
+    .location-label {
+      color: var(--teal);
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 11px;
+    }
+
+    .location strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 3px;
+    }
+
+    .location span {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       COACH
+    ========================= */
+
+    .coach {
+      padding: 130px 0;
+      background: white;
+    }
+
+    .coach-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .coach-photo {
+      height: 540px;
+      background: var(--light-grey);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coach-photo .photo-placeholder::before {
+      border-color: rgba(7,151,155,0.25);
+      width: 260px;
+      height: 260px;
+    }
+
+    .coach-photo .photo-placeholder-content {
+      color: var(--black);
+    }
+
+    .coach-copy .section-label {
+      margin-bottom: 25px;
+    }
+
+    .coach-copy h2 {
+      margin-bottom: 30px;
+    }
+
+    .coach-copy p {
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 620px;
+    }
+
+    .coach-name {
       margin-top: 35px;
       padding-top: 25px;
-      border-top: 1px solid #d9dcda;
+      border-top: 1px solid var(--line);
     }
 
-    .address strong {
+    .coach-name strong {
       display: block;
-      margin-bottom: 5px;
+      font-size: 16px;
     }
 
-    /* CTA */
+    .coach-name span {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
 
     .contact {
-      padding: 130px 8%;
       background: var(--teal);
       color: white;
+      padding: 135px 0;
       text-align: center;
     }
 
     .contact-inner {
-      max-width: 780px;
+      max-width: 850px;
       margin: auto;
     }
 
     .contact .section-label {
       color: white;
       opacity: 0.75;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .contact h2 {
+      font-size: clamp(44px, 6vw, 75px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      margin-bottom: 30px;
     }
 
     .contact p {
-      font-size: 18px;
-      max-width: 620px;
+      max-width: 650px;
       margin: 0 auto 38px;
+      font-size: 18px;
       opacity: 0.9;
     }
 
-    /* FOOTER */
+    .contact-small {
+      margin-top: 22px;
+      font-size: 11px !important;
+      letter-spacing: 1px;
+      opacity: 0.7 !important;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--black);
-      color: #999;
-      padding: 45px 8%;
+      color: #8e9494;
+      padding: 55px 0;
     }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: center;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
     }
 
     .footer-brand {
       color: white;
-      letter-spacing: 4px;
+      font-size: 15px;
       font-weight: 700;
-      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
     }
 
-    .footer-small {
-      font-size: 12px;
+    .footer-tagline {
+      color: var(--teal);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .footer-info {
       text-align: right;
-      line-height: 1.8;
+      font-size: 11px;
+      line-height: 1.9;
     }
 
-    /* MOBILE */
+    .footer-info a {
+      color: #b8bcbc;
+      text-decoration: none;
+    }
 
-    @media (max-width: 760px) {
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .container {
+        width: 86%;
+      }
+
       nav {
         height: 70px;
         padding: 0 6%;
-      }
-
-      .nav-links a:not(.nav-cta) {
-        display: none;
       }
 
       .nav-brand {
@@ -463,165 +763,413 @@
         letter-spacing: 3px;
       }
 
-      .nav-cta {
-        padding: 10px 13px;
-        font-size: 10px !important;
+      .nav-links {
+        gap: 0;
       }
+
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-links .nav-cta {
+        font-size: 9px;
+        padding: 9px 11px;
+      }
+
+
+      /* HERO */
 
       .hero {
-        padding: 125px 7% 75px;
-        min-height: 92vh;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 125px 7% 70px;
+        gap: 55px;
+        align-items: stretch;
       }
 
-      h1 {
-        letter-spacing: -2px;
+      .hero h1 {
+        font-size: clamp(55px, 15vw, 80px);
+        letter-spacing: -3px;
       }
 
-      .hero-copy {
-        font-size: 17px;
+      .hero-lead {
+        font-size: 18px;
       }
 
-      .section-grid,
-      .studio-wrap,
-      .training-card {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .hero-image {
+        height: 440px;
+        min-height: 0;
       }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+
+      /* GENERAL */
 
       .philosophy,
       .training,
+      .values,
       .studio,
+      .coach,
       .contact {
-        padding: 85px 7%;
+        padding-top: 90px;
+        padding-bottom: 90px;
       }
 
-      .difference {
-        padding: 85px 7%;
-      }
-
-      .difference-wrap {
+      .philosophy-grid,
+      .training-intro,
+      .service,
+      .studio-grid,
+      .coach-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .philosophy-grid,
+      .training-intro,
+      .studio-grid,
+      .coach-grid {
         gap: 45px;
       }
 
-      .price {
+      .philosophy h2,
+      .training h2,
+      .studio h2,
+      .coach h2 {
+        letter-spacing: -2px;
+      }
+
+
+      /* TRAINING */
+
+      .training-intro {
+        margin-bottom: 55px;
+      }
+
+      .service {
+        gap: 40px;
+        padding: 45px 0;
+      }
+
+      .included {
+        grid-template-columns: 1fr;
+      }
+
+      .price-panel {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 35px;
+      }
+
+
+      /* VALUES */
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+
+      /* PHOTOS */
+
+      .coaching-image {
+        min-height: 420px;
+      }
+
+      .studio-photo,
+      .coach-photo {
+        height: 430px;
+      }
+
+
+      /* CTA */
+
+      .contact h2 {
+        letter-spacing: -2px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-grid {
+        gap: 35px;
+      }
+
+      .footer-info {
         text-align: left;
       }
 
-      .studio-visual {
+    }
+
+
+    @media (max-width: 420px) {
+
+      .nav-brand {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      .nav-links .nav-cta {
+        padding: 8px 9px;
+      }
+
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-image {
         height: 360px;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .studio-photo,
+      .coach-photo {
+        height: 360px;
       }
 
-      .footer-small {
-        text-align: left;
-      }
     }
+
   </style>
 </head>
 
+
 <body>
 
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
   <nav>
-    <a href="#" class="nav-brand">KAIZEN <span>MOTION</span></a>
+
+    <a href="#" class="nav-brand">
+      KAIZEN <span>MOTION</span>
+    </a>
 
     <div class="nav-links">
+
       <a href="#training">Training</a>
+
       <a href="#studio">Studio</a>
-      <a href="#contact" class="nav-cta">BOOK A CONSULTATION</a>
+
+      <a
+        href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20find%20out%20more%20about%20personal%20training."
+        target="_blank"
+        class="nav-cta">
+        BOOK A CONSULTATION
+      </a>
+
     </div>
+
   </nav>
 
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <section class="hero">
 
     <div class="hero-content">
 
-      <div class="eyebrow">Private Personal Training · Singapore</div>
+      <div class="section-label">
+        Private Personal Training · Orchard
+      </div>
 
       <h1>
         BETTER,<br>
         <span>CONTINUOUSLY.</span>
       </h1>
 
-      <p class="hero-copy">
-        Personal training built around you. A focused, private environment
-        to get stronger, move better and make progress that lasts.
+      <p class="hero-lead">
+        <strong>Private personal training without the crowds.</strong>
+        Individual coaching, purposeful programming and a space designed
+        around your progress.
       </p>
 
-      <a href="#contact" class="button">START YOUR JOURNEY</a>
+      <p class="hero-sub">
+        One-to-one personal training at United House,
+        20 Kramat Lane, Singapore.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20book%20a%20consultation."
+          target="_blank"
+          class="button">
+          BOOK A CONSULTATION
+        </a>
+
+        <a href="#training" class="button button-outline">
+          EXPLORE TRAINING
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!--
+      FUTURE IMAGE:
+      Replace this entire .hero-image content
+      with your actual wide studio photograph.
+    -->
+
+    <div class="hero-image">
+
+      <div class="photo-placeholder">
+
+        <div class="photo-placeholder-content">
+          <strong>KAIZEN MOTION</strong>
+          <span>Studio photography coming soon</span>
+        </div>
+
+      </div>
+
+      <div class="image-caption">
+        Private Training · Orchard
+      </div>
 
     </div>
 
   </section>
 
 
+
+  <!-- =========================
+       PHILOSOPHY
+  ========================== -->
+
   <section class="philosophy">
 
-    <div class="section-grid">
+    <div class="container philosophy-grid">
 
       <div>
-        <div class="section-label">The Kaizen Approach</div>
+        <div class="section-label">
+          The Kaizen Approach
+        </div>
       </div>
 
+
       <div>
-        <h2>Progress doesn't need to be dramatic. It needs to continue.</h2>
+
+        <h2>
+          Progress doesn't need to be dramatic.
+          It needs to continue.
+        </h2>
 
         <p>
-          Kaizen means continuous improvement — the belief that meaningful
+          Kaizen means continuous improvement — the idea that meaningful
           change comes from consistently getting a little better.
         </p>
 
         <p>
-          We apply that same philosophy to training. No extremes. No
-          one-size-fits-all programmes. Just purposeful coaching,
-          progressive training and a plan built around where you are today
-          and where you want to go.
+          We bring that philosophy into training. No extremes. No generic
+          programme handed to everyone. Your training is built around where
+          you are today, what you want to achieve and how we can keep moving
+          you forward.
         </p>
+
       </div>
 
     </div>
 
   </section>
 
+
+
+  <!-- =========================
+       PERSONAL TRAINING
+  ========================== -->
 
   <section class="training" id="training">
 
-    <div class="training-wrap">
-
-      <div class="training-header">
-
-        <div class="section-label">Personal Training</div>
-
-        <h2>Training, built around you.</h2>
-
-        <p>
-          Every session is coached individually around your goals,
-          experience, movement and progress.
-        </p>
-
-      </div>
+    <div class="container">
 
 
-      <div class="training-card">
+      <div class="training-intro">
 
         <div>
-          <h3>1-to-1 Personal Training</h3>
+          <div class="section-label">
+            Personal Training
+          </div>
+        </div>
+
+
+        <div class="training-intro-copy">
+
+          <h2>
+            Training, built around you.
+          </h2>
 
           <p>
-            Individual coaching with a structured programme that evolves
-            with you. Whether your goal is strength, movement, confidence
-            or simply feeling better in your body, the process starts with you.
+            Every session is individually coached around your goals,
+            experience, movement and progress. You don't need to fit
+            yourself into a system — the training adapts to you.
           </p>
+
         </div>
 
-        <div class="price">
-          <strong>S$180</strong>
-          <span>Per Session</span>
+      </div>
+
+
+
+      <div class="service">
+
+        <div>
+
+          <h3>
+            1-to-1 Personal Training
+          </h3>
+
+          <p class="service-description">
+            Purposeful, individual coaching with a structured programme
+            that progresses with you. Whether you're new to strength
+            training, returning after time away or looking for more focused
+            coaching, we start from where you are.
+          </p>
+
+          <div class="included">
+
+            <span>Individual programming</span>
+            <span>1-to-1 coaching</span>
+            <span>Progressive strength training</span>
+            <span>Movement-focused approach</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="price-panel">
+
+          <div class="price-label">
+            Personal Training
+          </div>
+
+          <div class="price">
+            S$180 <span>/ session</span>
+          </div>
+
+          <p class="price-note">
+            One clear rate for private personal training.
+          </p>
+
         </div>
 
       </div>
@@ -631,76 +1179,170 @@
   </section>
 
 
-  <section class="difference">
 
-    <div class="difference-wrap">
+  <!-- =========================
+       VALUES
+  ========================== -->
 
-      <div class="difference-item">
-        <div class="number">01</div>
-        <h3>Personal</h3>
+  <section class="values">
+
+    <div class="container values-grid">
+
+
+      <div class="value">
+
+        <div class="value-number">
+          01
+        </div>
+
+        <h3>
+          Personal
+        </h3>
+
         <p>
-          Your programme is built around you — not adapted from a generic
-          template designed for everyone.
+          Your programme starts with you — your goals, your experience,
+          your movement and the life you need your training to fit around.
         </p>
+
       </div>
 
-      <div class="difference-item">
-        <div class="number">02</div>
-        <h3>Focused</h3>
+
+
+      <div class="value">
+
+        <div class="value-number">
+          02
+        </div>
+
+        <h3>
+          Focused
+        </h3>
+
         <p>
-          A private training environment without the crowds and distractions
-          of a large commercial gym.
+          A private, appointment-based environment without the crowds
+          and distractions of a large commercial gym.
         </p>
+
       </div>
 
-      <div class="difference-item">
-        <div class="number">03</div>
-        <h3>Progressive</h3>
+
+
+      <div class="value">
+
+        <div class="value-number">
+          03
+        </div>
+
+        <h3>
+          Progressive
+        </h3>
+
         <p>
-          Training evolves as you do. We focus on sustainable progress rather
-          than short-term extremes.
+          Training evolves as you do. We build capability over time
+          rather than chasing short-term extremes.
         </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FUTURE COACHING PHOTO
+  ========================== -->
+
+  <section class="coaching-image-section">
+
+    <div class="coaching-image">
+
+      <div class="photo-placeholder">
+
+        <div class="photo-placeholder-content">
+          <strong>THE PROCESS</strong>
+          <span>Future coaching photograph</span>
+        </div>
+
+      </div>
+
+      <div class="image-caption">
+        Individual coaching · Purposeful progress
       </div>
 
     </div>
 
   </section>
 
+
+
+  <!-- =========================
+       STUDIO
+  ========================== -->
 
   <section class="studio" id="studio">
 
-    <div class="studio-wrap">
+    <div class="container studio-grid">
 
-      <div class="studio-visual">
 
-        <div class="studio-mark">
-          <strong>KAIZEN</strong>
-          <span>MOTION</span>
+      <!-- FUTURE STUDIO IMAGE -->
+
+      <div class="studio-photo">
+
+        <div class="photo-placeholder">
+
+          <div class="photo-placeholder-content">
+            <strong>THE SPACE</strong>
+            <span>Studio photography coming soon</span>
+          </div>
+
         </div>
 
       </div>
+
 
 
       <div class="studio-copy">
 
-        <div class="section-label">The Studio</div>
+        <div class="section-label">
+          The Studio
+        </div>
 
-        <h2>Private by design.</h2>
+        <h2>
+          Private by design.
+        </h2>
 
         <p>
-          Kaizen Motion is a boutique personal training studio designed for
-          focused coaching — not crowds.
+          Kaizen Motion is intentionally small. The studio is designed
+          around personal training rather than fitting personal training
+          into a crowded gym.
         </p>
 
         <p>
-          A calm, considered space where the attention stays on your training,
-          your movement and your progress.
+          That means a quieter environment, focused coaching and space
+          to train without competing with a room full of people for
+          equipment or attention.
         </p>
 
-        <div class="address">
-          <strong>Kaizen Motion</strong>
-          20 Kramat Lane, United House<br>
-          Singapore 228773
+
+        <div class="location">
+
+          <div class="location-label">
+            Find Us
+          </div>
+
+          <strong>
+            Kaizen Motion
+          </strong>
+
+          <span>
+            United House<br>
+            20 Kramat Lane #01-03<br>
+            Singapore 228773
+          </span>
+
         </div>
 
       </div>
@@ -710,46 +1352,159 @@
   </section>
 
 
-  <section class="contact" id="contact">
 
-    <div class="contact-inner">
+  <!-- =========================
+       COACH
+  ========================== -->
 
-      <div class="section-label">Start Here</div>
+  <section class="coach">
 
-      <h2>Let's talk about where you want to go.</h2>
+    <div class="container coach-grid">
 
-      <p>
-        Start with a conversation. Tell us what you'd like to work on and
-        we'll help you figure out the right way forward.
-      </p>
 
-      <a
-        href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20find%20out%20more%20about%20personal%20training."
-        target="_blank"
-        class="button button-light">
-        WHATSAPP KAIZEN MOTION
-      </a>
+      <!-- FUTURE COACH PHOTO -->
+
+      <div class="coach-photo">
+
+        <div class="photo-placeholder">
+
+          <div class="photo-placeholder-content">
+            <strong>YOUR COACH</strong>
+            <span>Portrait photography coming soon</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="coach-copy">
+
+        <div class="section-label">
+          The Coaching
+        </div>
+
+        <h2>
+          Personal training should actually feel personal.
+        </h2>
+
+        <p>
+          Kaizen Motion was built around a simple idea: good coaching
+          starts with understanding the individual in front of you.
+        </p>
+
+        <p>
+          The goal isn't to make training unnecessarily complicated.
+          It's to understand what you're working towards, coach the
+          details that matter and build a process you can continue
+          progressing through.
+        </p>
+
+        <div class="coach-name">
+
+          <strong>
+            Kai Ming
+          </strong>
+
+          <span>
+            Founder · Personal Trainer
+          </span>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
 
+
+  <!-- =========================
+       FINAL CTA
+  ========================== -->
+
+  <section class="contact" id="contact">
+
+    <div class="container contact-inner">
+
+      <div class="section-label">
+        Start Here
+      </div>
+
+      <h2>
+        Your training starts with a conversation.
+      </h2>
+
+      <p>
+        Tell us where you are, what you'd like to work towards
+        and what you're looking for from your training.
+        We'll take it from there.
+      </p>
+
+      <a
+        href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20book%20a%20consultation%20and%20find%20out%20more%20about%20personal%20training."
+        target="_blank"
+        class="button button-white">
+        WHATSAPP KAIZEN MOTION
+      </a>
+
+      <p class="contact-small">
+        Private personal training · By appointment
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
 
-    <div class="footer-inner">
+    <div class="container footer-grid">
 
-      <div class="footer-brand">KAIZEN MOTION</div>
 
-      <div class="footer-small">
-        KAIZEN MOTION PTE. LTD.<br>
-        20 Kramat Lane, United House, Singapore 228773<br>
-        © 2026 Kaizen Motion. All rights reserved.
+      <div>
+
+        <div class="footer-brand">
+          KAIZEN MOTION
+        </div>
+
+        <div class="footer-tagline">
+          Better, continuously.
+        </div>
+
       </div>
+
+
+
+      <div class="footer-info">
+
+        KAIZEN MOTION PTE. LTD.<br>
+
+        20 Kramat Lane #01-03,
+        United House, Singapore 228773<br>
+
+        <a href="mailto:hello@kaizenmotion.sg">
+          hello@kaizenmotion.sg
+        </a>
+
+        <br>
+
+        © 2026 Kaizen Motion. All rights reserved.
+
+      </div>
+
 
     </div>
 
   </footer>
+
 
 </body>
 </html>
