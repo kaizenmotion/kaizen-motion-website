@@ -308,6 +308,29 @@
       z-index: 3;
     }
 
+    .site-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-image .site-photo {
+      object-position: center 42%;
+    }
+
+    .coaching-image .site-photo {
+      object-position: center center;
+    }
+
+    .studio-photo .site-photo {
+      object-position: center center;
+    }
+
+    .coach-photo .site-photo {
+      object-position: center center;
+    }
+
 
     /* =========================
        KAIZEN PHILOSOPHY
@@ -379,13 +402,8 @@
     .service {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 70px;
-
+      display: block;
       padding: 55px 0;
-      align-items: center;
     }
 
     .service h3 {
@@ -497,32 +515,53 @@
 
     .coaching-image-section {
       background: var(--black);
-      padding: 0;
+      color: white;
+      padding: 120px 0;
+    }
+
+    .coaching-editorial {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 90px;
+      align-items: center;
     }
 
     .coaching-image {
-      min-height: 560px;
       width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+      height: 640px;
       position: relative;
       overflow: hidden;
-
-      background:
-        linear-gradient(
-          120deg,
-          #171c1d,
-          #0f1213
-        );
+      background: #0f1213;
     }
 
-    .coaching-image .photo-placeholder::before {
-      width: 420px;
-      height: 420px;
+    .coaching-image .site-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      background: #0f1213;
     }
+
+    .coaching-copy .section-label {
+      margin-bottom: 24px;
+    }
+
+    .coaching-copy h2 {
+      font-size: clamp(40px, 5vw, 67px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 30px;
+      max-width: 650px;
+    }
+
+    .coaching-copy p {
+      color: #b9bdbd;
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 620px;
+    }
+
 
 
     /* =========================
@@ -654,6 +693,135 @@
       font-size: 13px;
     }
 
+
+
+    /* =========================
+       TRUST STRIP
+    ========================== */
+
+    .trust-strip {
+      background: var(--black);
+      color: white;
+      padding: 28px 0;
+    }
+
+    .trust-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      text-align: center;
+    }
+
+    .trust-items span {
+      padding: 2px 18px;
+      color: #d7dada;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .trust-items span + span {
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+
+
+    /* =========================
+       PRICING
+    ========================== */
+
+    .pricing {
+      padding: 125px 0;
+      background: var(--warm-white);
+    }
+
+    .pricing-head {
+      max-width: 760px;
+      margin-bottom: 64px;
+    }
+
+    .pricing-head .section-label {
+      margin-bottom: 20px;
+    }
+
+    .pricing-head h2 {
+      font-size: clamp(40px, 5vw, 67px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .pricing-head p {
+      max-width: 680px;
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .pricing-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      min-width: 0;
+      min-height: 285px;
+      padding: 36px 32px 32px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.featured {
+      border-top: 3px solid var(--teal);
+      padding-top: 34px;
+    }
+
+    .price-kicker {
+      color: var(--teal);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .price-card .price {
+      font-size: clamp(42px, 4vw, 58px);
+      line-height: 1;
+      letter-spacing: -2.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      margin-bottom: 14px;
+    }
+
+    .price-card .price-note {
+      margin: 0 0 34px;
+      color: var(--grey);
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: none;
+    }
+
+    .price-card .button {
+      width: 100%;
+      margin-top: auto;
+      text-align: center;
+    }
+
+    .price-card.featured .button {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .price-card.featured .button:hover {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
 
     /* =========================
        CTA
@@ -819,6 +987,7 @@
       .values,
       .studio,
       .coach,
+      .pricing,
       .contact {
         padding-top: 90px;
         padding-bottom: 90px;
@@ -829,6 +998,8 @@
       .service,
       .studio-grid,
       .coach-grid,
+      .coaching-editorial,
+      .pricing-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -836,7 +1007,8 @@
       .philosophy-grid,
       .training-intro,
       .studio-grid,
-      .coach-grid {
+      .coach-grid,
+      .coaching-editorial {
         gap: 45px;
       }
 
@@ -882,12 +1054,54 @@
       /* PHOTOS */
 
       .coaching-image {
-        min-height: 420px;
+        height: 520px;
+        min-height: 0;
       }
 
       .studio-photo,
       .coach-photo {
         height: 430px;
+      }
+
+
+      .trust-items {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-items span {
+        padding: 14px 8px;
+      }
+
+      .trust-items span + span {
+        border-left: 0;
+      }
+
+      .trust-items span:nth-child(even) {
+        border-left: 1px solid rgba(255,255,255,0.15);
+      }
+
+      .trust-items span:nth-child(n+3) {
+        border-top: 1px solid rgba(255,255,255,0.15);
+      }
+
+
+      /* PRICING */
+
+      .pricing-head {
+        margin-bottom: 45px;
+      }
+
+      .pricing-head h2 {
+        letter-spacing: -2px;
+      }
+
+      .pricing-grid {
+        gap: 16px;
+      }
+
+      .price-card {
+        min-height: 300px;
+        padding: 30px 26px 26px;
       }
 
 
@@ -996,29 +1210,17 @@
       </h1>
 
       <p class="hero-lead">
-        <strong>Private personal training without the crowds.</strong>
-        Individual coaching, purposeful programming and a space designed
-        around your progress.
+        <strong>Private 1-to-1 personal training in Orchard.</strong>
+        Individual coaching in a calm, appointment-based studio.
       </p>
 
       <p class="hero-sub">
-        One-to-one personal training at United House,
-        20 Kramat Lane, Singapore.
+        United House · 20 Kramat Lane · Singapore
       </p>
 
       <div class="hero-buttons">
-
-        <a
-          href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20book%20a%20consultation."
-          target="_blank"
-          class="button">
-          BOOK A CONSULTATION
-        </a>
-
-        <a href="#training" class="button button-outline">
-          EXPLORE TRAINING
-        </a>
-
+        <a href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20book%20a%20consultation."
+           target="_blank" class="button">BOOK A CONSULTATION</a>
       </div>
 
     </div>
@@ -1031,20 +1233,11 @@
     -->
 
     <div class="hero-image">
-
-      <div class="photo-placeholder">
-
-        <div class="photo-placeholder-content">
-          <strong>KAIZEN MOTION</strong>
-          <span>Studio photography coming soon</span>
-        </div>
-
-      </div>
-
-      <div class="image-caption">
-        Private Training · Orchard
-      </div>
-
+      <img
+        class="site-photo"
+        src="kaizen-hero.jpg"
+        alt="Kaizen Motion private personal training studio in Orchard, Singapore"
+      >
     </div>
 
   </section>
@@ -1155,23 +1348,6 @@
 
         </div>
 
-
-        <div class="price-panel">
-
-          <div class="price-label">
-            Personal Training
-          </div>
-
-          <div class="price">
-            S$180 <span>/ session</span>
-          </div>
-
-          <p class="price-note">
-            One clear rate for private personal training.
-          </p>
-
-        </div>
-
       </div>
 
     </div>
@@ -1179,6 +1355,52 @@
   </section>
 
 
+
+  <!-- =========================
+       PRICING
+  ========================== -->
+
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-head">
+        <div class="section-label">Personal Training</div>
+        <h2>Choose how you want to begin.</h2>
+        <p>Straightforward pricing for private 1-to-1 personal training. Start with a single session or choose a package for consistent progress.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="price-kicker">Single Session</div>
+          <div class="price">S$180</div>
+          <div class="price-note">1 personal training session</div>
+          <a class="button button-outline" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'm%20interested%20in%20the%20S%24180%20single%20personal%20training%20session%20and%20would%20like%20to%20find%20out%20more." target="_blank">ENQUIRE</a>
+        </article>
+
+        <article class="price-card">
+          <div class="price-kicker">10 Sessions</div>
+          <div class="price">S$1,700</div>
+          <div class="price-note">S$170 per session</div>
+          <a class="button button-outline" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'm%20interested%20in%20the%2010-session%20personal%20training%20package%20at%20S%241%2C700%20and%20would%20like%20to%20find%20out%20more." target="_blank">ENQUIRE</a>
+        </article>
+
+        <article class="price-card featured">
+          <div class="price-kicker">20 Sessions</div>
+          <div class="price">S$3,200</div>
+          <div class="price-note">S$160 per session</div>
+          <a class="button" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'm%20interested%20in%20the%2020-session%20personal%20training%20package%20at%20S%243%2C200%20and%20would%20like%20to%20find%20out%20more." target="_blank">ENQUIRE</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="Kaizen Motion studio features">
+    <div class="container trust-items">
+      <span>1-to-1 Coaching</span>
+      <span>Appointment Only</span>
+      <span>Private Studio</span>
+      <span>Orchard</span>
+    </div>
+  </section>
 
   <!-- =========================
        VALUES
@@ -1252,30 +1474,38 @@
 
 
   <!-- =========================
-       FUTURE COACHING PHOTO
+       TRAINING EXPERIENCE
   ========================== -->
 
   <section class="coaching-image-section">
+    <div class="container coaching-editorial">
 
-    <div class="coaching-image">
-
-      <div class="photo-placeholder">
-
-        <div class="photo-placeholder-content">
-          <strong>THE PROCESS</strong>
-          <span>Future coaching photograph</span>
-        </div>
-
+      <div class="coaching-image">
+        <img
+          class="site-photo"
+          src="kaizen-training.jpg"
+          alt="One-to-one personal training at Kaizen Motion"
+        >
       </div>
 
-      <div class="image-caption">
-        Individual coaching · Purposeful progress
+      <div class="coaching-copy">
+        <div class="section-label">Individual Coaching</div>
+
+        <h2>Room to focus.</h2>
+
+        <p>
+          No rushing between stations. No competing for equipment. No need
+          to keep pace with anyone else.
+        </p>
+
+        <p>
+          Your session has one purpose: giving you the time, coaching and
+          space to train well.
+        </p>
       </div>
 
     </div>
-
   </section>
-
 
 
   <!-- =========================
@@ -1290,16 +1520,11 @@
       <!-- FUTURE STUDIO IMAGE -->
 
       <div class="studio-photo">
-
-        <div class="photo-placeholder">
-
-          <div class="photo-placeholder-content">
-            <strong>THE SPACE</strong>
-            <span>Studio photography coming soon</span>
-          </div>
-
-        </div>
-
+        <img
+          class="site-photo"
+          src="kaizen-studio-detail.jpg"
+          alt="Kaizen Motion private training space with dumbbells, bench and strength equipment"
+        >
       </div>
 
 
@@ -1354,71 +1579,43 @@
 
 
   <!-- =========================
-       COACH
+       EXPERIENCE
   ========================== -->
 
-  <section class="coach">
-
+  <section class="coach experience">
     <div class="container coach-grid">
 
-
-      <!-- FUTURE COACH PHOTO -->
-
       <div class="coach-photo">
-
-        <div class="photo-placeholder">
-
-          <div class="photo-placeholder-content">
-            <strong>YOUR COACH</strong>
-            <span>Portrait photography coming soon</span>
-          </div>
-
-        </div>
-
+        <img
+          class="site-photo"
+          src="kaizen-entrance.jpg"
+          alt="Entrance to Kaizen Motion at United House, Orchard"
+        >
       </div>
 
-
-
       <div class="coach-copy">
+        <div class="section-label">The Experience</div>
 
-        <div class="section-label">
-          The Coaching
-        </div>
-
-        <h2>
-          Personal training should actually feel personal.
-        </h2>
+        <h2>A quieter place to train.</h2>
 
         <p>
-          Kaizen Motion was built around a simple idea: good coaching
-          starts with understanding the individual in front of you.
+          Kaizen Motion is appointment-based by design. Fewer people, less
+          noise and less waiting around means your time in the studio stays
+          focused on your training.
         </p>
 
         <p>
-          The goal isn't to make training unnecessarily complicated.
-          It's to understand what you're working towards, coach the
-          details that matter and build a process you can continue
-          progressing through.
+          It is a small, considered space for people who want personal
+          attention, purposeful training and an environment they can keep
+          coming back to.
         </p>
-
-        <div class="coach-name">
-
-          <strong>
-            Kai Ming
-          </strong>
-
-          <span>
-            Founder · Personal Trainer
-          </span>
-
-        </div>
-
       </div>
 
     </div>
-
   </section>
 
+
+  
 
 
   <!-- =========================
