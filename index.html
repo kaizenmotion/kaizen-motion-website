@@ -1085,16 +1085,8 @@
       /* PHOTOS */
 
       .coaching-image {
-        height: auto;
+        height: 520px;
         min-height: 0;
-      }
-
-      .coaching-image .site-photo {
-        width: 100%;
-        height: auto;
-        max-height: none;
-        object-fit: contain;
-        object-position: center center;
       }
 
       .studio-photo,
@@ -1260,20 +1252,10 @@
         grid-template-columns: minmax(400px, 0.9fr) minmax(0, 1.1fr);
         gap: clamp(80px, 9vw, 145px);
       }
-      .coaching-image {
-        height: auto;
-        min-height: 620px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      .coaching-image { height: 680px; }
       .coaching-image .site-photo {
-        width: 100%;
-        height: auto;
-        max-height: 680px;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center center;
-        background: #0f1213;
       }
 
       .studio { padding: 150px 0; }
@@ -1311,6 +1293,393 @@
       font-weight: 700;
       font-size: 18px !important;
       line-height: 1.55;
+    }
+
+  
+    /* =========================
+       V10 — EDITORIAL / PRIVATE STUDIO
+       ========================= */
+
+    :root {
+      --paper: #f7f5f0;
+      --ink-soft: #2a3030;
+    }
+
+    body {
+      background: var(--paper);
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 3.6px;
+    }
+
+    .button,
+    .nav-links .nav-cta {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .button {
+      min-height: 50px;
+      padding-left: 27px;
+      padding-right: 27px;
+      font-size: 10px;
+      letter-spacing: 2.1px;
+    }
+
+    nav {
+      background: rgba(247,245,240,0.93);
+      border-bottom-color: rgba(16,20,21,0.045);
+    }
+
+    .nav-links .nav-cta {
+      border: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .nav-links .nav-cta:hover {
+      background: transparent;
+      color: var(--teal-dark);
+      border-color: var(--teal-dark);
+    }
+
+    .hero h1,
+    .philosophy h2,
+    .training h2,
+    .studio h2,
+    .coaching-copy h2,
+    .pricing-head h2,
+    .contact h2 {
+      font-weight: 600;
+    }
+
+    .hero-lead {
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    .hero-image,
+    .studio-photo,
+    .coaching-image {
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 5;
+      height: auto !important;
+      min-height: 0 !important;
+    }
+
+    .hero-image .site-photo {
+      object-fit: cover;
+      object-position: center 42%;
+    }
+
+    .editorial-caption {
+      position: absolute;
+      left: 18px;
+      bottom: 15px;
+      z-index: 5;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .editorial-caption.light {
+      color: rgba(255,255,255,0.76);
+      text-shadow: 0 1px 12px rgba(0,0,0,0.32);
+    }
+
+    .philosophy {
+      padding-top: 165px;
+      padding-bottom: 165px;
+    }
+
+    .philosophy p {
+      max-width: 650px;
+    }
+
+    .training {
+      background: var(--paper);
+    }
+
+    .training-intro-copy p,
+    .service-description {
+      max-width: 690px;
+    }
+
+    .service {
+      border-bottom: 0;
+    }
+
+    .pricing {
+      background: var(--paper);
+    }
+
+    .pricing-head {
+      margin-bottom: 70px;
+    }
+
+    .pricing-menu {
+      border-top: 1px solid rgba(16,20,21,0.18);
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+      padding: 31px 0;
+      border-bottom: 1px solid rgba(16,20,21,0.18);
+    }
+
+    .pricing-name {
+      display: block;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.25px;
+      margin-bottom: 4px;
+    }
+
+    .pricing-detail {
+      display: block;
+      color: var(--grey);
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .pricing-amount {
+      font-size: clamp(27px, 3vw, 39px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -1.5px;
+      white-space: nowrap;
+    }
+
+    .pricing-action {
+      padding-top: 36px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .editorial-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--black);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.1px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--black);
+      transition: 0.3s ease;
+    }
+
+    .editorial-link span {
+      font-size: 17px;
+      line-height: 0.7;
+      transition: transform 0.3s ease;
+    }
+
+    .editorial-link:hover {
+      color: var(--teal-dark);
+      border-color: var(--teal-dark);
+    }
+
+    .editorial-link:hover span {
+      transform: translateX(5px);
+    }
+
+    .trust-strip {
+      padding: 24px 0;
+    }
+
+    .trust-items span {
+      font-size: 9px;
+      letter-spacing: 2.4px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .values {
+      background: #eeeee9;
+      padding-top: 135px;
+      padding-bottom: 135px;
+    }
+
+    .value {
+      border-top-width: 1px;
+    }
+
+    .value-number {
+      margin-bottom: 45px;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+
+    .value h3 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .coaching-image-section {
+      padding-top: 155px;
+      padding-bottom: 155px;
+    }
+
+    .coaching-image {
+      height: auto !important;
+      min-height: 0 !important;
+      overflow: visible;
+      background: transparent;
+      padding: 34px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .coaching-image .site-photo {
+      width: 100%;
+      height: auto !important;
+      max-height: none !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      background: transparent;
+    }
+
+    .coaching-image .editorial-caption {
+      left: 34px;
+      bottom: 12px;
+      transform: translateY(100%);
+      color: rgba(255,255,255,0.52);
+      text-shadow: none;
+    }
+
+    .privacy-statement {
+      color: white;
+      font-size: clamp(20px, 2vw, 27px);
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      line-height: 1.45;
+      margin: -5px 0 28px;
+    }
+
+    .studio {
+      background: var(--paper);
+    }
+
+    .studio-photo {
+      aspect-ratio: 4 / 5;
+      height: auto !important;
+    }
+
+    .studio-photo .site-photo {
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .studio-photo:hover .site-photo,
+    .hero-image:hover .site-photo {
+      transform: scale(1.015);
+    }
+
+    .studio-emphasis {
+      font-weight: 500 !important;
+      font-size: 17px !important;
+      letter-spacing: 0.1px;
+    }
+
+    .contact {
+      padding-top: 160px;
+      padding-bottom: 160px;
+    }
+
+    .contact h2 {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 851px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.12fr) minmax(390px, 0.78fr);
+        gap: clamp(90px, 9vw, 155px);
+      }
+
+      .coaching-editorial {
+        grid-template-columns: minmax(420px, 0.92fr) minmax(0, 1.08fr);
+      }
+
+      .studio-grid {
+        grid-template-columns: minmax(0, 1.03fr) minmax(390px, 0.82fr);
+      }
+
+      .studio-photo {
+        margin-left: -4vw;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .hero-image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        height: auto !important;
+      }
+
+      .coaching-image-section {
+        padding-top: 100px;
+        padding-bottom: 105px;
+      }
+
+      .coaching-image {
+        padding: 18px;
+      }
+
+      .coaching-image .editorial-caption {
+        left: 18px;
+      }
+
+      .studio-photo {
+        aspect-ratio: 4 / 5;
+        height: auto !important;
+      }
+
+      .pricing-row {
+        padding: 25px 0;
+        gap: 18px;
+      }
+
+      .pricing-name {
+        font-size: 17px;
+      }
+
+      .pricing-amount {
+        font-size: 26px;
+      }
+
+      .pricing-action {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .pricing-amount {
+        font-size: 30px;
+      }
+
+      .editorial-caption {
+        font-size: 7px;
+        letter-spacing: 1.6px;
+      }
     }
 
   </style>
@@ -1367,9 +1736,8 @@
       </h1>
 
       <p class="hero-lead">
-        <strong>Private personal training, without the gym crowd.</strong>
-        One-to-one coaching in an appointment-based studio in Orchard.
-        No crowded gym floor. No waiting for equipment. No feeling like you're on display.
+        <strong>Private personal training in Orchard.</strong>
+        Individual coaching, thoughtful programming and the privacy to train on your terms.
       </p>
 
       <p class="hero-sub">
@@ -1396,6 +1764,7 @@
         src="kaizen-hero.jpg"
         alt="Kaizen Motion private personal training studio in Orchard, Singapore"
       >
+      <div class="editorial-caption light">01 / KAIZEN MOTION · ORCHARD</div>
     </div>
 
   </section>
@@ -1465,13 +1834,13 @@
         <div class="training-intro-copy">
 
           <h2>
-            Your training. Your coach. Your space.
+            Training, considered around you.
           </h2>
 
           <p>
-            You don't need to fit yourself into a class, navigate a crowded
-            gym floor or figure out what to do on your own. Every session is
-            individually coached around your goals, experience and progress.
+            Every session is individually coached and intentionally structured
+            around your goals, experience and progress — with the space and
+            attention to train well.
           </p>
 
         </div>
@@ -1489,10 +1858,9 @@
           </h3>
 
           <p class="service-description">
-            One-to-one coaching with a structured programme that progresses
-            with you. Whether you're new to strength training, returning after
-            time away or simply want to train without the distractions of a
-            commercial gym, we start from where you are.
+            Structured, one-to-one coaching that starts from where you are
+            and progresses with you. Strength, movement and technique are
+            developed with purpose — never as a generic workout.
           </p>
 
           <div class="included">
@@ -1526,27 +1894,34 @@
         <p>Straightforward pricing for private 1-to-1 personal training. Start with a single session or choose a package for consistent progress.</p>
       </div>
 
-      <div class="pricing-grid">
-        <article class="price-card">
-          <div class="price-kicker">Single Session</div>
-          <div class="price">S$180</div>
-          <div class="price-note">1 personal training session</div>
-          <a class="button button-outline" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'm%20interested%20in%20the%20S%24180%20single%20personal%20training%20session%20and%20would%20like%20to%20find%20out%20more." target="_blank">ENQUIRE</a>
-        </article>
+      <div class="pricing-menu">
+        <div class="pricing-row">
+          <div>
+            <span class="pricing-name">Single Session</span>
+            <span class="pricing-detail">1 private personal training session</span>
+          </div>
+          <div class="pricing-amount">S$180</div>
+        </div>
 
-        <article class="price-card">
-          <div class="price-kicker">10 Sessions</div>
-          <div class="price">S$1,700</div>
-          <div class="price-note">S$170 per session</div>
-          <a class="button button-outline" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'm%20interested%20in%20the%2010-session%20personal%20training%20package%20at%20S%241%2C700%20and%20would%20like%20to%20find%20out%20more." target="_blank">ENQUIRE</a>
-        </article>
+        <div class="pricing-row">
+          <div>
+            <span class="pricing-name">10 Sessions</span>
+            <span class="pricing-detail">S$170 per session</span>
+          </div>
+          <div class="pricing-amount">S$1,700</div>
+        </div>
 
-        <article class="price-card featured">
-          <div class="price-kicker">20 Sessions</div>
-          <div class="price">S$3,200</div>
-          <div class="price-note">S$160 per session</div>
-          <a class="button" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'm%20interested%20in%20the%2020-session%20personal%20training%20package%20at%20S%243%2C200%20and%20would%20like%20to%20find%20out%20more." target="_blank">ENQUIRE</a>
-        </article>
+        <div class="pricing-row">
+          <div>
+            <span class="pricing-name">20 Sessions</span>
+            <span class="pricing-detail">S$160 per session</span>
+          </div>
+          <div class="pricing-amount">S$3,200</div>
+        </div>
+
+        <div class="pricing-action">
+          <a class="editorial-link" href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20find%20out%20more%20about%20personal%20training." target="_blank">ENQUIRE ABOUT TRAINING <span>→</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -1554,8 +1929,8 @@
   <section class="trust-strip" aria-label="Kaizen Motion studio features">
     <div class="container trust-items">
       <span>Private Training</span>
-      <span>1-to-1 Coaching</span>
-      <span>Appointment Only</span>
+      <span>Individual Coaching</span>
+      <span>By Appointment</span>
       <span>Orchard</span>
     </div>
   </section>
@@ -1580,8 +1955,8 @@
         </h3>
 
         <p>
-          Train without the crowd. No busy gym floor, no audience and no need
-          to feel self-conscious while you're learning, moving or pushing yourself.
+          Privacy to train on your terms — away from the noise and distractions
+          of a conventional gym floor.
         </p>
 
       </div>
@@ -1599,8 +1974,8 @@
         </h3>
 
         <p>
-          No waiting around for equipment or constantly working around other
-          people's workouts. Your session is set up around what you need to do.
+          Your session is planned around what you need to do, with the space
+          and equipment to keep your training moving.
         </p>
 
       </div>
@@ -1618,9 +1993,8 @@
         </h3>
 
         <p>
-          You don't need to figure things out yourself. Your coach guides the
-          session from start to finish, with training built around your goals,
-          experience and progress.
+          Individual attention from start to finish, with coaching and
+          programming that evolve as you progress.
         </p>
 
       </div>
@@ -1645,6 +2019,7 @@
           src="kaizen-training.jpg"
           alt="One-to-one personal training at Kaizen Motion"
         >
+        <div class="editorial-caption light">02 / PRIVATE PERSONAL TRAINING</div>
       </div>
 
       <div class="coaching-copy">
@@ -1652,15 +2027,11 @@
 
         <h2>Train without the audience.</h2>
 
-        <p>
-          You shouldn't have to feel confident in a gym before you can start
-          training. You don't need to worry about whether you know how to use
-          the equipment, how much you can lift or what you look like while exercising.
-        </p>
+        <div class="privacy-statement">No crowds. No waiting. No judgement.</div>
 
         <p>
-          There's no class to keep up with and no crowded gym floor to navigate.
-          You come in. We coach you. The session is built around you.
+          A private, appointment-based environment where the focus stays on
+          your training — not the room around you.
         </p>
       </div>
 
@@ -1685,6 +2056,7 @@
           src="kaizen-studio-detail.jpg"
           alt="Kaizen Motion private training space with dumbbells, bench and strength equipment"
         >
+        <div class="editorial-caption light">03 / THE STUDIO</div>
       </div>
 
 
@@ -1700,18 +2072,17 @@
         </h2>
 
         <p>
-          Kaizen Motion wasn't designed to fit as many people as possible
-          onto a gym floor. It was designed around personal training.
+          Kaizen Motion was designed around personal training — not around
+          fitting as many people as possible onto a gym floor.
         </p>
 
         <p>
-          That means space to move, access to the equipment you need and an
-          environment where your coach can focus on your session — without
-          having to work around a crowded gym.
+          Space to move. Access to the equipment you need. An environment
+          considered around focused, individual training.
         </p>
 
         <p class="studio-emphasis">
-          No queues. No crowds. No feeling like you're on display.
+          Private by design. Personal by nature.
         </p>
 
 
@@ -1739,49 +2110,7 @@
 
   </section>
 
-
-
-  <!-- =========================
-       EXPERIENCE
-  ========================== -->
-
-  <section class="coach experience">
-    <div class="container coach-grid">
-
-      <div class="coach-photo">
-        <img
-          class="site-photo"
-          src="kaizen-entrance.jpg"
-          alt="Entrance to Kaizen Motion at United House, Orchard"
-        >
-      </div>
-
-      <div class="coach-copy">
-        <div class="section-label">The Experience</div>
-
-        <h2>Privacy changes how training feels.</h2>
-
-        <p>
-          No crowded room to perform in. No pressure to compare yourself with
-          the person next to you. No need to feel judged while you're learning
-          something new or working through a difficult session.
-        </p>
-
-        <p>
-          Kaizen Motion gives you the privacy to focus on your own training,
-          with personal coaching and an environment designed around the work
-          you're here to do.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  
-
-
-  <!-- =========================
+<!-- =========================
        FINAL CTA
   ========================== -->
 
