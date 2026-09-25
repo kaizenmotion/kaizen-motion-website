@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1084,8 +1085,16 @@
       /* PHOTOS */
 
       .coaching-image {
-        height: 520px;
+        height: auto;
         min-height: 0;
+      }
+
+      .coaching-image .site-photo {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: center center;
       }
 
       .studio-photo,
@@ -1251,10 +1260,20 @@
         grid-template-columns: minmax(400px, 0.9fr) minmax(0, 1.1fr);
         gap: clamp(80px, 9vw, 145px);
       }
-      .coaching-image { height: 680px; }
+      .coaching-image {
+        height: auto;
+        min-height: 620px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .coaching-image .site-photo {
-        object-fit: cover;
+        width: 100%;
+        height: auto;
+        max-height: 680px;
+        object-fit: contain;
         object-position: center center;
+        background: #0f1213;
       }
 
       .studio { padding: 150px 0; }
