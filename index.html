@@ -1944,6 +1944,52 @@ footer { padding:65px 0; }
 @media(max-width:600px){.kaizen-confirmation{padding:23px 20px;min-height:510px}.kaizen-confirmation__descriptor{display:none}.kaizen-confirmation__bottom{font-size:8px;flex-wrap:wrap}.kaizen-confirmation__main{padding:35px 0}}
 @media(prefers-reduced-motion:reduce){.kaizen-confirmation{animation:none}}
 
+
+/* V21: Repair contact CTA overflow and contrast across screen sizes */
+.contact { overflow: hidden; padding-inline: 20px !important; }
+.contact .contact-inner { width: min(100%, 940px); max-width: 940px; margin-inline: auto; }
+.contact h2 {
+  font-size: clamp(34px, 5.4vw, 70px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+  max-width: 100% !important;
+  overflow-wrap: normal;
+  word-break: normal;
+  margin: 0 auto 28px !important;
+}
+.contact p { max-width: min(100%, 700px); }
+.contact a.button.button-white,
+.contact a.button.button-white:link,
+.contact a.button.button-white:visited {
+  background: #f7f5f0 !important;
+  border: 1px solid #f7f5f0 !important;
+  color: #172221 !important;
+  opacity: 1 !important;
+  font-family: var(--sans) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .14em !important;
+  text-decoration: none !important;
+  text-align: center;
+  min-height: 54px;
+  padding: 16px 26px;
+  width: auto;
+  max-width: 100%;
+  white-space: normal;
+}
+.contact a.button.button-white:hover,
+.contact a.button.button-white:focus-visible {
+  background: #172221 !important;
+  border-color: #f7f5f0 !important;
+  color: #fff !important;
+}
+@media (max-width: 650px) {
+  .contact { padding: 90px 18px !important; }
+  .contact h2 { font-size: clamp(32px, 8.4vw, 52px) !important; letter-spacing: -.045em !important; }
+  .contact p { font-size: 18px !important; }
+  .contact a.button.button-white { width: 100%; max-width: 360px; }
+}
+
 </style>
 
 <style id="v17-luxury-refinement">
