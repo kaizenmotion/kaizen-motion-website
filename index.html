@@ -1904,6 +1904,25 @@ footer { padding:65px 0; }
       .v18-need,.v18-need:nth-child(odd),.v18-need:nth-child(even){padding:15px 0;border-left:0}
     }
 
+
+/* Kaizen Motion — enquiry capture */
+.enquiry-section{background:#f4f2ec;padding:130px 0;border-top:1px solid rgba(16,20,21,.14)}
+.enquiry-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:100px;align-items:start}
+.enquiry-copy h2{font-family:var(--display,Georgia,serif);font-size:clamp(44px,5vw,68px);font-weight:400;line-height:1.05;letter-spacing:-.04em;margin:18px 0 25px}
+.enquiry-copy p{color:var(--grey);font-size:16px;line-height:1.8;max-width:440px}
+.enquiry-form{border-top:1px solid #101415;padding-top:28px}
+.enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.enquiry-form label{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 9px}
+.enquiry-form .field{margin-bottom:25px}
+.enquiry-form input:not([type=checkbox]),.enquiry-form select{width:100%;min-height:52px;border:1px solid #cbd0cd;border-radius:0;background:#fff;padding:13px 15px;color:#101415;font:15px Arial,Helvetica,sans-serif}
+.enquiry-form input:focus,.enquiry-form select:focus{outline:2px solid #087d80;outline-offset:2px}
+.enquiry-form .consent{display:flex;align-items:flex-start;gap:12px;color:#626a6b;font-size:12px;line-height:1.6;margin:5px 0 26px}
+.enquiry-form .consent input{margin-top:3px;accent-color:#087d80}
+.enquiry-form button{cursor:pointer;width:100%;font-family:inherit}
+.enquiry-form .form-footnote{color:#626a6b;font-size:11px;line-height:1.6;margin-top:14px}
+.enquiry-form .trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+@media(max-width:850px){.enquiry-section{padding:90px 0}.enquiry-grid{grid-template-columns:1fr;gap:42px}.enquiry-form .form-row{grid-template-columns:1fr;gap:0}}
+
 </style>
 
 <style id="v17-luxury-refinement">
@@ -2045,7 +2064,8 @@ nav{height:88px;padding:0 5.2%;background:rgba(247,245,240,.94);border-bottom:1p
     <div class="nav-links">
       <a href="#difference">Why Kaizen</a>
       <a href="#studio">Studio</a>
-      <a href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20find%20out%20more." target="_blank" class="nav-cta">BOOK A CONSULTATION</a>
+      <a href="#enquire">Enquire</a>
+      <a href="#enquire" class="nav-cta">ENQUIRE NOW</a>
     </div>
   </nav>
 
@@ -2056,7 +2076,7 @@ nav{height:88px;padding:0 5.2%;background:rgba(247,245,240,.94);border-bottom:1p
       <p class="hero-lead">Private personal training that considers the whole picture — <strong>your goals, your body, how you move and what you need to keep progressing.</strong></p>
       <div class="hero-proof">COMPLETELY PERSONAL <i>·</i> PRIVATE BY DESIGN <i>·</i> BUILT TO EVOLVE</div>
       <div class="hero-buttons">
-        <a href="https://wa.me/6581612469?text=Hi%20Kaizen%20Motion%2C%20I'd%20like%20to%20book%20a%20consultation." target="_blank" class="button">BOOK A CONSULTATION</a>
+        <a href="#enquire" class="button">ENQUIRE ABOUT TRAINING</a>
         <a href="#trial" class="editorial-link">START WITH A TRIAL <span>→</span></a>
       </div>
     </div>
@@ -2184,6 +2204,52 @@ nav{height:88px;padding:0 5.2%;background:rgba(247,245,240,.94);border-bottom:1p
         <p>Purpose-built for focused personal training in the heart of Orchard.</p>
         <div class="location"><div class="location-label">Find Us</div><strong>Kaizen Motion</strong><span>United House<br>20 Kramat Lane #01-03<br>Singapore 228773</span><div class="v15-location-note">Near Somerset MRT · By appointment</div></div>
       </div>
+    </div>
+  </section>
+
+
+  <section class="enquiry-section" id="enquire" aria-labelledby="enquiry-heading">
+    <div class="container enquiry-grid">
+      <div class="enquiry-copy">
+        <div class="section-label">Start A Conversation</div>
+        <h2 id="enquiry-heading">Tell us what you're working towards.</h2>
+        <p>Interested in private personal training? Leave your details and a little about your goals. We'll get in touch to explore the right starting point for you.</p>
+      </div>
+      <form class="enquiry-form" action="https://movemembers.com/api/leads/t_3b9e9616d23e4c648237?token=hmcYf7kGB7ETjHLpTbEdZNSEip4BKYBW" method="POST">
+        <div class="form-row">
+          <div class="field"><label for="lead-name">Your name *</label><input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Full name" required maxlength="120"></div>
+          <div class="field"><label for="lead-email">Email address *</label><input id="lead-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="lead-phone">Phone / WhatsApp</label><input id="lead-phone" name="phone" type="tel" autocomplete="tel" placeholder="+65" maxlength="30"></div>
+          <div class="field"><label for="lead-level">Training experience</label>
+            <select id="lead-level" name="level">
+              <option value="">Select (optional)</option>
+              <option value="New to training">New to training</option>
+              <option value="Some experience">Some experience</option>
+              <option value="Experienced">Experienced</option>
+              <option value="Returning after a break">Returning after a break</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="lead-interest">What would you like help with?</label>
+          <select id="lead-interest" name="interest">
+            <option value="">Select your main goal (optional)</option>
+            <option value="Strength and muscle">Strength &amp; muscle</option>
+            <option value="Fat loss and body composition">Fat loss &amp; body composition</option>
+            <option value="Movement and mobility">Movement &amp; mobility</option>
+            <option value="Return to training">Return to training</option>
+            <option value="Performance">Performance</option>
+            <option value="General fitness and confidence">General fitness &amp; confidence</option>
+            <option value="Introductory trial">Introductory trial</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="trap" aria-hidden="true"><label for="lead-company-url">Leave this field empty</label><input id="lead-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+        <label class="consent"><input type="checkbox" required><span>I agree that Kaizen Motion may contact me using the details provided about my enquiry. My details will be used to respond to this request.</span></label>
+        <button class="button" type="submit">SEND MY ENQUIRY</button>
+        <p class="form-footnote">No obligation to sign up. We'll contact you personally to discuss your goals.</p>
+      </form>
     </div>
   </section>
 
